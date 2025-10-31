@@ -9,21 +9,20 @@ SOLUTION
 │     └── index.html
 ├── src
 │    ├── auth
-│    │     └── firebase.js
+│    │     └── firebase.jsx
 │    ├── components
-│    │     ├── MovieCard.js
-│    │     └── Navbar.js
+│    │     ├── MovieCard.jsx
+│    │     └── Navbar.jsx
 │    ├── context
-│    │     └── AuthContext.js
+│    │     └── AuthContext.jsx
 │    ├── pages
-│    │     ├── Login.js
-│    │     ├── Register.js
-│    │     ├── Main.js
-│    │     └── MovieDetail.js
+│    │     ├── Login.jsx
+│    │     ├── Register.jsx
+│    │     ├── Main.jsx
+│    │     └── MovieDetail.jsx
 │    ├── router
-│    │     └── Router.js
+│    │     └── Router.jsx
 │    ├── App.js
-│    ├── App.css
 │    ├── index.js
 │    └── index.css
 ├── package.json
