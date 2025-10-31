@@ -1,9 +1,10 @@
+import { ToastContainer } from "react-toastify";
 
 
 function App() {
   return (
   <div>
-    
+    <ToastContainer/>
   </div>
 
   );
