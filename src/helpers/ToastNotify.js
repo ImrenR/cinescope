@@ -1,6 +1,8 @@
  //https://fkhadra.github.io/react-toastify/introduction
  //! Get the toast emitter from above link and export here !
 
+import { toast } from "react-toastify";
+
  export const toastSuccess = (msj)=> {
  
 toast.success(msj, {
