@@ -13,6 +13,7 @@ const newUser=(email,password, displayName)=>{
   
   createUserWithEmailAndPassword(auth, email, password)
 
+  
 }
 
 
