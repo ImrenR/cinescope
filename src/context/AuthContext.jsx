@@ -73,7 +73,7 @@ signOut(auth).then(() => {
       displayName:user.displayName,
     })
   } else {
-    
+    setCurrentUser(false)
   }
 });
   }
