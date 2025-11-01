@@ -1,8 +1,19 @@
+import axios from "axios";
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 const MovieDetail = () => {
 
 
+const {idd}=useParams()
 
+const API_KEY = process.env.REACT_APP_TMDB_KEY;
+
+useEffect(() => {
+ axios.get(`https://api.themoviedb.org/3/discover/movie/${idd}?api_key=${API_KEY}`)
+.then((res)=>console.log(res))
+
+}, [])
 
 
 
@@ -36,7 +47,7 @@ const MovieDetail = () => {
               </li>
               <li className="px-6 py-2 border-gray-400 w-full rounded-t-lg">
                 <a
-                  
+                  href="#"
                   className="text-blue-600 hover:text-blue-700 transition duration-300 ease-in-out mb-4"
                 >
                   Go Back
