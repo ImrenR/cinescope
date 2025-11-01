@@ -1,6 +1,8 @@
 import { createContext } from "react"
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../auth/firebase";
+import { toastSuccess } from "../helpers/ToastNotify";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -8,12 +10,14 @@ import { auth } from "../auth/firebase";
 export const AuthContextt = createContext()
 
 const AuthContext = ({children}) => {
-
+const navigate=useNavigate()
 const newUser=(email,password, displayName)=>{
   
   createUserWithEmailAndPassword(auth, email, password)
+   toastSuccess("Registration successful")
 
-  
+navigate("/")
+
 }
 
 
@@ -26,4 +30,4 @@ const newUser=(email,password, displayName)=>{
 
 }
 
-export default AuthContext
+export default AuthContext;

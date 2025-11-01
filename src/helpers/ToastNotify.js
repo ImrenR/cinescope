@@ -13,8 +13,7 @@ closeOnClick: false,
 pauseOnHover: true,
 draggable: true,
 progress: undefined,
-theme: "light",
-transition: Bounce,
+
 });
 }
  export const toastWarning = (msj)=> {
@@ -27,8 +26,7 @@ closeOnClick: false,
 pauseOnHover: true,
 draggable: true,
 progress: undefined,
-theme: "light",
-transition: Bounce,
+
 });
 
 } 
@@ -43,7 +41,6 @@ closeOnClick: false,
 pauseOnHover: true,
 draggable: true,
 progress: undefined,
-theme: "light",
-transition: Bounce,
+
 });
 }
