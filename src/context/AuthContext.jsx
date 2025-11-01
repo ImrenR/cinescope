@@ -1,5 +1,10 @@
 import { createContext } from "react"
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../auth/firebase";
+
+
+
+
 export const AuthContextt = createContext()
 
 const AuthContext = ({children}) => {
