@@ -1,6 +1,7 @@
 import { ToastContainer } from "react-toastify";
 import AuthContext from "./context/AuthContext";
 import Register from "./pages/Register";
+import AppRouter from "./router/AppRouter";
 
 
 function App() {
@@ -8,7 +9,7 @@ function App() {
   <div>
      
     <AuthContext>
-      <Register/>
+     <AppRouter/>
     <ToastContainer/>
     </AuthContext>
   </div>
