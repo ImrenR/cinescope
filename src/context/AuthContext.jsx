@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { createUserWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { auth } from "../auth/firebase";
 import { toastError, toastSuccess } from "../helpers/ToastNotify";
 import { useNavigate } from "react-router-dom";
@@ -19,6 +19,16 @@ const AuthContext = ({ children }) => {
     navigate("/");
   };
 
+  const login=()=> {
+    signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+   toastSuccess("Logged in")
+  })
+  .catch((error) => {
+    toastError("Unsuccessful")
+  });
+  }
+
   const signGoogle =()=> {
 const provider = new GoogleAuthProvider(); 
 
@@ -32,7 +42,7 @@ signInWithPopup(auth, provider)
   }
 
   return (
-    <AuthContextt.Provider value={{ newUser ,signGoogle}}>
+    <AuthContextt.Provider value={{ newUser ,signGoogle, login}}>
       {children}
     </AuthContextt.Provider>
   );
