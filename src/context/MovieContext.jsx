@@ -12,7 +12,7 @@ const MovieContext = ({children}) => {
 const api_key=process.env.REACT_APP_TMDB_KEY;
 const URL=`https://api.themoviedb.org/3/discover/movie?api_key=${api_key}`
 
-const [films, setFilms] = useState();
+const [films, setFilms] = useState([]);
 const [loading, setLoading] = useState(false)
 
 
