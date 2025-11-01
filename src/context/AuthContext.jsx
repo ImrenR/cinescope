@@ -19,7 +19,7 @@ const AuthContext = ({ children }) => {
     navigate("/");
   };
 
-  const login=()=> {
+  const login=(email,password)=> {
     signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
    toastSuccess("Logged in")
