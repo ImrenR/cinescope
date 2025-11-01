@@ -1,5 +1,5 @@
 
-import MovieCard from '../components/MovieCard';
+
 
 const Main = () => {
 
