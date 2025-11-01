@@ -1,8 +1,10 @@
 import { createContext } from "react";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { auth } from "../auth/firebase";
-import { toastSuccess } from "../helpers/ToastNotify";
+import { toastError, toastSuccess } from "../helpers/ToastNotify";
 import { useNavigate } from "react-router-dom";
+import { GoogleAuthProvider } from "firebase/auth";
+
 
 export const AuthContextt = createContext();
 
@@ -18,11 +20,19 @@ const AuthContext = ({ children }) => {
   };
 
   const signGoogle =()=> {
+const provider = new GoogleAuthProvider(); 
 
+signInWithPopup(auth, provider)
+  .then((result) => {
+    toastSuccess("Signin with Google successful")
+    navigate("/")
+  }).catch((error) => {
+    toastError("Signin with Google unsuccessful")
+  });
   }
 
   return (
-    <AuthContextt.Provider value={{ newUser }}>
+    <AuthContextt.Provider value={{ newUser ,signGoogle}}>
       {children}
     </AuthContextt.Provider>
   );
