@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import { auth } from "../auth/firebase";
 import { toastError, toastSuccess } from "../helpers/ToastNotify";
 import { useNavigate } from "react-router-dom";
@@ -41,8 +41,17 @@ signInWithPopup(auth, provider)
   });
   }
 
+  const cikis =()=> {
+   
+signOut(auth).then(() => {
+  toastSuccess("Signout  successful")
+}).catch((error) => {
+  toastError("Signout unsuccessful")
+});
+  }
+
   return (
-    <AuthContextt.Provider value={{ newUser ,signGoogle, login}}>
+    <AuthContextt.Provider value={{ newUser ,signGoogle, login, cikis}}>
       {children}
     </AuthContextt.Provider>
   );

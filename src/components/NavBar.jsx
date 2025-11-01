@@ -5,14 +5,16 @@ import {
   MenuItem,
   MenuItems,
 } from "@headlessui/react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContextt } from "../context/AuthContext";
 
 
 
 
 export default function Navbar() {
 
-
+const {cikis}= useContext(AuthContextt)
 
   //tailwindui.com/components/preview adresinden navbar aldık ve navigation, mobile menu button, open, Disclosure.Panel sildik
   return (
@@ -70,6 +72,7 @@ export default function Navbar() {
                   <MenuItem>
                     <span
                       className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 cursor-pointer"
+                    onClick={()=>cikis()}
                     >
                       Log out
                     </span>
