@@ -1,6 +1,12 @@
 import GoogleIcon from "../assets/icons/GoogleIcon";
+import { AuthContextt } from "../context/AuthContext";
+import { useContext } from "react";
+
 
 const Register = () => {
+
+  const {newUser}=useContext(AuthContextt)
+
   return (
     <div className="overflow-hidden flex-1 h-screen justify-center items-center bg-[#23242a]">
       <div className={`form-container mt-[5vh] w-[380px] h-[580px]`}>
