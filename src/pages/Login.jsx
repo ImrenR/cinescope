@@ -1,6 +1,10 @@
+import { useContext } from "react";
 import GoogleIcon from "../assets/icons/GoogleIcon";
+import { AuthContextt } from "../context/AuthContext";
 
 const Login = () => {
+
+  const {signGoogle} = useContext(AuthContextt)
   return (
     <div className="overflow-hidden flex-1 h-screen justify-center items-center bg-[#23242a]">
       <div className={`form-container mt-[5vh] w-[380px] h-[580px]`}>
@@ -35,6 +39,7 @@ const Login = () => {
           <button
             type="button"
             className="btn-danger flex justify-between text-center "
+          onClick={()=>signGoogle()}
           >
             Continue with Google
             <GoogleIcon color="currentColor" />
