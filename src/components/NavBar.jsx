@@ -8,13 +8,13 @@ import {
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContextt } from "../context/AuthContext";
-
+import avatar from "../assets/icons/avatar.png";
 
 
 
 export default function Navbar() {
 
-const {cikis}= useContext(AuthContextt)
+const {cikis, currentUser}= useContext(AuthContextt)
 
   //tailwindui.com/components/preview adresinden navbar aldık ve navigation, mobile menu button, open, Disclosure.Panel sildik
   return (
@@ -31,7 +31,7 @@ const {cikis}= useContext(AuthContextt)
 
             <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
               {/* kullanıcı giriş yaptıysa displayName ekranda görünsün */}
-              <h5 className="mr-2 capitalize "></h5>
+              <h5 className="mr-2 capitalize ">{currentUser?.displayName}</h5>
 
               {/* Profile dropdown */}
               <Menu as="div" className="relative">
@@ -40,7 +40,7 @@ const {cikis}= useContext(AuthContextt)
                     <span className="sr-only">Open user menu</span>
                     <img
                       alt=""
-                      src={""}
+                      src={currentUser?.photoURL || avatar}
                       className="h-8 w-8 rounded-full"
                       referrerPolicy="no-referrer"
                     />

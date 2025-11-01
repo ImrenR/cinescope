@@ -1,5 +1,5 @@
-import { createContext } from "react";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { createContext, useEffect, useState } from "react";
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { auth } from "../auth/firebase";
 import { toastError, toastSuccess } from "../helpers/ToastNotify";
 import { useNavigate } from "react-router-dom";
@@ -10,13 +10,27 @@ export const AuthContextt = createContext();
 
 const AuthContext = ({ children }) => {
   const navigate = useNavigate();
+const [currentUser, setCurrentUser] = useState();
 
+ useEffect(() => {
+   userTakip()
+ }, [])
+ 
+  
 
   const newUser =async (email, password, displayName) => {
   await  createUserWithEmailAndPassword(auth, email, password);
     toastSuccess("Registration successful");
 
     navigate("/");
+
+    updateProfile(auth.currentUser, {
+  displayName:displayName
+}).then(() => {
+ 
+}).catch((error) => {
+  
+});
   };
 
   const login=(email,password)=> {
@@ -50,8 +64,22 @@ signOut(auth).then(() => {
 });
   }
 
+  const userTakip=()=> {
+    onAuthStateChanged(auth, (user) => {
+  if (user) {
+    setCurrentUser({
+      email:user.email,
+      photoURL:user.photoURL,
+      displayName:user.displayName,
+    })
+  } else {
+    
+  }
+});
+  }
+
   return (
-    <AuthContextt.Provider value={{ newUser ,signGoogle, login, cikis}}>
+    <AuthContextt.Provider value={{ newUser ,signGoogle, login, cikis, currentUser}}>
       {children}
     </AuthContextt.Provider>
   );
