@@ -45,7 +45,7 @@ A React movie application that lets users browse movies, view details, and manag
 
 ## How It Works
 
-**Sign-In / Sign-Up:*
+*Sign-In / Sign-Up:*
 - Users can sign in using Google or email/password.
 - After logging in, the display name is shown in the navbar.
 
