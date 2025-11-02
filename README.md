@@ -32,10 +32,15 @@ A React movie application that lets users browse movies, view details, and manag
 ## Features
 
 **Google Sign-In & Email/Password Authentication**
+
 **Profile Update:** Add or update your display name
+
 **Dynamic Navbar:** Shows your name when logged in
+
 **Protected Routes:** Movie detail pages accessible only if logged in
+
 **Movie Browsing:** Browse popular movies fetched from TMDb API
+
 **Responsive Design:** Works on desktop and mobile
 
 ## How It Works
