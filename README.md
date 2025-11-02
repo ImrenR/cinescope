@@ -9,6 +9,10 @@ A React movie application that lets users browse movies, view details, and manag
 
 ![CineScope Demo](./movie.gif)
 
+*CineScope on Vercel :*
+
+https://cinescope-alpha.vercel.app/
+
 ## Tech Stack
 
 **Frontend:** React
