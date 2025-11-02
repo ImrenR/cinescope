@@ -12,13 +12,21 @@ A React movie application that lets users browse movies, view details, and manag
 ## Tech Stack
 
 **Frontend:** React
+
 **State Management:** Context API, React Hooks (useState, useEffect, useContext)
+
 **Styling:** TailwindCSS
+
 **Routing:** React Router DOM
+
 **HTTP Requests:** Axios
+
 **Notifications / Alerts:** React-Toastify
+
 **Authentication:** Firebase Authentication (Google & Email/Password)
+
 **API:** The Movie Database (TMDb)
+
 **Deployment:** Vercel
 
 ## Features
@@ -36,11 +44,11 @@ A React movie application that lets users browse movies, view details, and manag
 - Users can sign in using Google or email/password.
 - After logging in, the display name is shown in the navbar.
 
-**Protected Routes:*
+*Protected Routes:*
 - Movie detail pages are restricted; if the user logs out, they cannot access detail pages.
 
-**Profile Update:*
+*Profile Update:*
 - Users can update their display name after signing in.
 
-**Movie Data:*
+*Movie Data:*
 Movies are fetched from The Movie Database (TMDb) API.
